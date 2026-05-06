@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "Control Samsung Smart 4K",
+        "subcategory": "Televisor",
+        "price": 15000,
+        "img": "Img/Photoroom-20250820_211155_5.png"
+    },
+    {
+        "id": 2,
+        "name": "Control LG Magic Remote",
+        "subcategory": "Televisor",
+        "price": 17000,
+        "img": "img/lg.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Limpia Contactos Delta 440cc",
+        "subcategory": "Limpia Contactos",
+        "price": 9800,
+        "img": "img/quimico.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Soldador Goot 40W Punta Cerámica",
+        "subcategory": "Soldadores",
+        "price": 25000,
+        "img": "img/soldador.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Router TP-Link Archer C6",
+        "subcategory": "Routers",
+        "price": 38000,
+        "img": "img/router.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Control DirecTV Prepago RC67",
+        "subcategory": "Convertidores",
+        "price": 16000,
+        "img": "img/directv.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Alcohol Isopropílico 1Lt",
+        "subcategory": "Alcohol",
+        "price": 7500,
+        "img": "img/alcohol.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Tester Digital Pro",
+        "subcategory": "Testers",
+        "price": 22000,
+        "img": "img/tester.jpg"
+    },
+    {
+        "id": 1778026771437,
+        "name": "Producto de Prueba",
+        "subcategory": "Porton",
+        "price": 5500,
+        "img": "Img/lg.jpg"
+    }
+]

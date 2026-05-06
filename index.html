@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Remoto Lr | Catálogo</title>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="style.css?v=2">
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Carrito Sidebar -->
+<div class="cart-overlay" id="overlay" onclick="toggleCart()"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h2>Tu pedido</h2>
+        <button class="close-cart" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    </div>
+    <ul class="cart-items" id="cart-items-list">
+        <!-- Ítems del carrito insertados por JS -->
+    </ul>
+    <div class="cart-footer">
+        <div class="total-row">
+            <span>Total</span>
+            <span id="cart-total-price">$0</span>
+        </div>
+        <button class="btn-buy" onclick="enviarWhatsApp()"><i class="fab fa-whatsapp"></i> Finalizar Pedido</button>
+    </div>
+</aside>
+
+<!-- Header -->
+<header class="glass">
+    <div class="logo">
+        <h1>Control Remoto <span>Lr</span></h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li class="dropdown">
+                <button class="dropbtn" onclick="filterCategory('todos')"><i class="fas fa-th-large"></i> Todos</button>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn"><i class="fas fa-tv"></i> Controles</button>
+                <div class="dropdown-content glass">
+                    <button onclick="filterBySub('Televisor')">Televisor</button>
+                    <button onclick="filterBySub('Aire Acondicionado')">Aire Acondicionado</button>
+                    <button onclick="filterBySub('Convertidores')">Convertidores</button>
+                    <button onclick="filterBySub('Porton')">Portón</button>
+                    <button onclick="filterBySub('Otros')">Otros</button>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn"><i class="fas fa-flask"></i> Químicos</button>
+                <div class="dropdown-content glass">
+                    <button onclick="filterBySub('Limpia Contactos')">Limpia Contactos</button>
+                    <button onclick="filterBySub('Alcohol')">Alcohol Isoprop.</button>
+                    <button onclick="filterBySub('Flux')">Flux / Estaño</button>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn"><i class="fas fa-microchip"></i> Electrónica</button>
+                <div class="dropdown-content glass">
+                    <button onclick="filterBySub('Routers')">Routers</button>
+                    <button onclick="filterBySub('Cargadores')">Cargadores</button>
+                    <button onclick="filterBySub('Fuentes')">Fuentes</button>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn"><i class="fas fa-tools"></i> Herramientas</button>
+                <div class="dropdown-content glass">
+                    <button onclick="filterBySub('Soldadores')">Soldadores</button>
+                    <button onclick="filterBySub('Testers')">Testers</button>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <button class="cart-trigger" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="count" id="header-cart-count">0</span>
+    </button>
+</header>
+
+<!-- Main Content -->
+<main>
+    <div id="loader" class="loader-container">
+        <div class="loader"></div>
+    </div>
+    <div id="products-grid" class="products-grid">
+        <!-- Productos cargados por JS -->
+    </div>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="f-sec">
+        <h4><i class="fas fa-map-marker-alt"></i> Ubicación</h4>
+        <p>Peatonal Joaquín V. González 184<br>La Rioja, Argentina</p>
+    </div>
+    <div class="f-sec">
+        <h4><i class="fas fa-phone-alt"></i> Contacto</h4>
+        <p>WhatsApp: +54 9 3804-858788<br>Email: ventas@controlremotolarioja.com</p>
+    </div>
+    <div class="f-sec">
+        <h4>Síguenos</h4>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <div style="margin-top: 20px;">
+            <a href="admin.html" class="admin-link"><i class="fas fa-lock"></i> Acceso Administrador</a>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js?v=2"></script>
+</body>
+</html>

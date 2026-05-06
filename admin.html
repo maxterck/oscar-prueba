@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administrador | Control Remoto Lr</title>
+    <!-- Mismo estilo base -->
+    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="admin.css?v=2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header class="glass">
+    <div class="logo">
+        <h1>Admin <span>Panel</span></h1>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html" class="dropbtn" style="text-decoration:none;">
+                    <i class="fas fa-store"></i> Volver a Tienda
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main class="admin-main">
+    <section class="admin-section glass">
+        <h2><i class="fas fa-plus-circle"></i> Agregar / Editar Producto</h2>
+        <form id="product-form" class="admin-form">
+            <input type="hidden" id="prod-id">
+            
+            <div class="form-group">
+                <label>Nombre del Producto</label>
+                <input type="text" id="prod-name" required placeholder="Ej: Control Samsung Smart">
+            </div>
+
+            <div class="form-group">
+                <label>Subcategoría</label>
+                <select id="prod-sub" required>
+                    <option value="Televisor">Televisor</option>
+                    <option value="Aire Acondicionado">Aire Acondicionado</option>
+                    <option value="Convertidores">Convertidores</option>
+                    <option value="Porton">Portón</option>
+                    <option value="Limpia Contactos">Limpia Contactos</option>
+                    <option value="Alcohol">Alcohol Isopropílico</option>
+                    <option value="Flux">Flux / Estaño</option>
+                    <option value="Routers">Routers</option>
+                    <option value="Cargadores">Cargadores</option>
+                    <option value="Fuentes">Fuentes</option>
+                    <option value="Soldadores">Soldadores</option>
+                    <option value="Testers">Testers</option>
+                    <option value="Otros">Otros</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Precio ($ ARS)</label>
+                <input type="number" id="prod-price" required placeholder="Ej: 15000">
+            </div>
+
+            <div class="form-group">
+                <label>Ruta de la Imagen</label>
+                <input type="text" id="prod-img" required placeholder="Ej: Img/mifoto.jpg">
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-save"><i class="fas fa-save"></i> Guardar Producto</button>
+                <button type="button" class="btn-cancel" onclick="resetForm()" style="display:none;" id="btn-cancel">Cancelar Edición</button>
+            </div>
+        </form>
+    </section>
+
+    <section class="admin-section glass" style="margin-top:30px;">
+        <h2><i class="fas fa-list"></i> Productos Actuales (<span id="prod-count">0</span>)</h2>
+        <div class="table-responsive">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>IMG</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-product-list">
+                    <!-- Filas generadas por JS -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="admin.js?v=2"></script>
+</body>
+</html>
