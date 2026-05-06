@@ -34,7 +34,7 @@ function renderAdminTable() {
             <tr>
                 <td><img src="${p.img}" onerror="this.src='https://via.placeholder.com/50?text=IMG'"></td>
                 <td><strong>${p.name}</strong></td>
-                <td><span style="background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;">${p.subcategory}</span></td>
+                <td><span class="badge">${p.subcategory}</span></td>
                 <td>$${p.price.toLocaleString('es-AR')}</td>
                 <td class="action-btns">
                     <button class="btn-edit" onclick="editProduct(${p.id})" title="Editar"><i class="fas fa-edit"></i></button>

@@ -52,7 +52,7 @@ function renderProducts(list) {
 
     list.forEach(p => {
         grid.innerHTML += `
-            <article class="product-card glass">
+            <article class="product-card">
                 <div class="img-container">
                     <img src="${p.img}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300/ffffff/000000?text=Sin+Imagen'">
                 </div>
