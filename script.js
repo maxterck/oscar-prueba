@@ -101,7 +101,7 @@ function addToCart(id) {
     const itemsInCart = cart.filter(item => item.id === id).length;
     
     if (itemsInCart >= currentStock) {
-        alert(`Stock insuficiente. Solo hay ${currentStock} unidades de "${product.name}" disponibles.`);
+        alert(`Stock insuficiente`);
         return;
     }
 

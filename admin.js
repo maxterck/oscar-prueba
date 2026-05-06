@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function checkPassword() {
     const pass = document.getElementById('admin-pass').value;
-    if (pass === 'admin') { // Contraseña por defecto
+    if (pass === 'oscar1234') { // Contraseña elegida por el usuario
         sessionStorage.setItem('adminLogged', 'true');
         unlockAdmin();
     } else {
