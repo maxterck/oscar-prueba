@@ -142,6 +142,39 @@
     vertical-align: middle;
 }
 
+/* Login Overlay */
+.login-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 3000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.login-box h2 {
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.login-box p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
 .admin-table tbody tr:hover {
     background-color: var(--bg-surface);
 }

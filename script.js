@@ -51,18 +51,26 @@ function renderProducts(list) {
     }
 
     list.forEach(p => {
+        let currentStock = p.stock !== undefined ? p.stock : 10;
+        let btnDisabled = currentStock <= 0 ? 'disabled' : '';
+        let btnText = currentStock <= 0 ? '<i class="fas fa-times"></i> Agotado' : '<i class="fas fa-plus"></i> Añadir';
+        let btnClass = currentStock <= 0 ? 'btn-add disabled' : 'btn-add';
+
         grid.innerHTML += `
             <article class="product-card">
                 <div class="img-container">
                     <img src="${p.img}" alt="${p.name}" onerror="this.src='https://via.placeholder.com/300/ffffff/000000?text=Sin+Imagen'">
                 </div>
                 <div class="product-info">
-                    <span class="subcategory">${p.subcategory || 'General'}</span>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <span class="subcategory">${p.subcategory || 'General'}</span>
+                        <span style="font-size: 0.75rem; color: ${currentStock > 0 ? 'var(--success)' : 'var(--primary)'}; font-weight: bold;">Stock: ${currentStock}</span>
+                    </div>
                     <h3>${p.name}</h3>
                     <div class="price-row">
                         <div class="price">$${p.price.toLocaleString('es-AR')}</div>
-                        <button class="btn-add" onclick="addToCart(${p.id})">
-                            <i class="fas fa-plus"></i> Añadir
+                        <button class="${btnClass}" onclick="addToCart(${p.id})" ${btnDisabled}>
+                            ${btnText}
                         </button>
                     </div>
                 </div>
@@ -89,6 +97,14 @@ function addToCart(id) {
     const product = allProducts.find(p => p.id === id);
     if (!product) return;
     
+    const currentStock = product.stock !== undefined ? product.stock : 10;
+    const itemsInCart = cart.filter(item => item.id === id).length;
+    
+    if (itemsInCart >= currentStock) {
+        alert(`Stock insuficiente. Solo hay ${currentStock} unidades de "${product.name}" disponibles.`);
+        return;
+    }
+
     cart.push({...product, cartId: Date.now()});
     saveCart();
     updateCartUI();

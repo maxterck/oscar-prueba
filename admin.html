@@ -19,6 +19,11 @@
         <nav>
             <ul>
                 <li>
+                    <a href="#" onclick="logout()" class="dropbtn" id="btn-logout" style="display:none; text-decoration:none; margin-right:10px;">
+                        <i class="fas fa-sign-out-alt"></i> Salir
+                    </a>
+                </li>
+                <li>
                     <a href="index.html" class="dropbtn" style="text-decoration:none;">
                         <i class="fas fa-store"></i> Volver a Tienda
                     </a>
@@ -28,7 +33,20 @@
     </div>
 </header>
 
-<main class="admin-main">
+<!-- Overlay de Login -->
+<div id="login-overlay" class="login-overlay">
+    <div class="login-box">
+        <h2><i class="fas fa-lock"></i> Acceso Restringido</h2>
+        <p>Por favor, ingresa la contraseña para continuar.</p>
+        <div class="form-group" style="margin-top: 20px;">
+            <input type="password" id="admin-pass" placeholder="Contraseña...">
+        </div>
+        <button onclick="checkPassword()" class="btn-save" style="margin-top: 20px; width: 100%; justify-content: center;">Ingresar</button>
+        <p id="login-error" style="color: var(--primary); margin-top: 10px; display: none; font-size: 0.9rem;">Contraseña incorrecta</p>
+    </div>
+</div>
+
+<main class="admin-main" id="admin-content" style="display:none;">
     <section class="admin-section">
         <h2><i class="fas fa-plus-circle"></i> Agregar / Editar Producto</h2>
         <form id="product-form" class="admin-form">
@@ -68,6 +86,11 @@
                 <input type="text" id="prod-img" required placeholder="Ej: Img/mifoto.jpg">
             </div>
 
+            <div class="form-group">
+                <label>Stock Disponible</label>
+                <input type="number" id="prod-stock" required placeholder="Ej: 10" min="0">
+            </div>
+
             <div class="form-actions">
                 <button type="submit" class="btn-save"><i class="fas fa-save"></i> Guardar Producto</button>
                 <button type="button" class="btn-cancel" onclick="resetForm()" style="display:none;" id="btn-cancel">Cancelar Edición</button>
@@ -85,6 +108,7 @@
                         <th>Nombre</th>
                         <th>Categoría</th>
                         <th>Precio</th>
+                        <th>Stock</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>

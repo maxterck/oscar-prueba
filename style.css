@@ -272,10 +272,16 @@ main {
     transition: var(--transition);
 }
 
-.btn-add:hover {
+.btn-add:hover:not(.disabled) {
     background-color: var(--primary);
     border-color: var(--primary);
     color: white;
+}
+
+.btn-add.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--bg-surface);
 }
 
 /* =========================================
